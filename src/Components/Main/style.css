@@ -1,0 +1,25 @@
+.main{
+    display: flex;
+}
+.main__container{
+    display: bloack;
+    flex-basis: 80%;
+}
+.main__candlestick{
+    display: flex;
+    flex-basis: 80%;
+}
+.main__candlestick--first{
+    flex-basis: 80%;
+}
+.main__order{
+    flex-basis: 20%;
+}
+.main__openorder{
+    flex-basis: 20%;
+}
+
+
+.main__buysell{
+    flex-basis: 20%;
+}

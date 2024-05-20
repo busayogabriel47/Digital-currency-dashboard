@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import Header from './Components/Header/Header'
 import Headertwo from './Components/Headertwo'
+import Main from './Components/Main'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
     <>
       <Header/>
       <Headertwo/>
+      <Main/>
     </>
   )
 }
