@@ -1,0 +1,53 @@
+.headertwo{
+    background-color: #20252B;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 80px;
+    padding: 16px;
+    margin: 0 0.8rem;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+.headertwo__select{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.headertwo_btn{
+    display: flex;
+    background-color: transparent;
+    border: 0;
+    gap: 32px;
+}
+.headertwo_btn{
+    font-size: 24px;
+}
+/* Text and header with white color*/
+.headertwo_btn, .header__btcdata-digit{
+    color: #fff;
+}
+
+
+.headertwo__price{
+    margin-top: ;
+}
+.headertwo__price p{
+    color: #06A468;
+    font-size: 18px;
+    margin-top:0.81rem;
+}
+
+/* btcdata style*/
+.headertwo__btcdata{
+    display: flex;
+    gap: 48px;
+}
+.header__btcdata-hrs{
+    font-size: 12px;
+    font-weight: 500;
+    gap: 4px;
+}
+.header__btcdata-digit{
+    font-size: 14px;
+}
