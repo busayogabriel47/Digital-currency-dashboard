@@ -9,3 +9,13 @@ body{
 .headertwo, .header{
     padding: 0 1.5rem;    
 }
+.headertwo,.main__candlestick--first, .main__order,
+.main__buysell {
+    margin: 5px;
+}
+.border-bottom{
+    border: 0;
+}
+.rounded-3{
+    
+}
