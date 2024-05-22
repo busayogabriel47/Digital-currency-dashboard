@@ -17,6 +17,7 @@
 }
 .main__openorder{
     flex-basis: 20%;
+    height: 561px;
 }
 
 
@@ -168,7 +169,7 @@
 
 /* Styles for the form input */
 .form__input {
-    width: 239px;
+    width: 100%;
     height: 40px;
     padding: 13px 16px;
     border: 1px solid #848D96;
@@ -227,4 +228,50 @@
 
 .form__button:hover {
     background-color: #0056b3;
+}
+
+.total__accvalue{
+    margin-top: 1rem;
+}
+
+.total__accvalue--container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.total__accvalue--text{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    color: #848D96;
+}
+.form__select{
+    color: #A7B1BC;
+    background-color: #20252B;
+}
+.total__accvalue--btn{
+    width: 80px;
+    height: 40px;
+    background-color: #007bff;
+    margin-top: 1.4rem;
+    border-radius: 8px;
+    padding: 8px;
+    border: 0;
+}
+.order{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.order__content{
+    width: 378px;
+    height: 88px;
+    margin: 10rem;
+}
+.order__content h5{
+    font-size: 20px;
+}
+.order__content p{
+    font-size: 10px;
+    color: #A7B1BC;
 }

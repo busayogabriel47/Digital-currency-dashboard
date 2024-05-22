@@ -1,33 +1,55 @@
-
-.header{
-    background-color: #1C2127;
+.header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: transparent;
+    gap: 3rem;
     height: 72px;
-    border-bottom: 1px solid #252930;
-}
-.header__navitems ul{
+    color: white;
+  }
+  
+  .header__logo img {
+    height: 40px;
+  }
+  
+  .header__navitems {
+    flex: 1;
+  }
+  
+  .header__navlist {
     display: flex;
     list-style: none;
-    gap: 3rem;
-}
-
-.header__navitems ul li{
+    padding: 0;
+    margin: 0;
+  }
+  
+  .header__navitem {
+    margin: 0 15px;
+  }
+  
+  .header__navitem a {
+    text-decoration: none;
+    color: #A7B1BC;
+    font-weight: bold;
     font-size: 14px;
-}
-.header__logo{
-    flex-basis: 10%;
-}
-.header__navitems{
-    flex-basis: 80%;
-}
-.search-bar{
-    flex-basis: 10%;
-}
-
-/* Global style*/
-
-.header__btcdata-hrs, 
-.header__navitems ul li{
-    color: #848D97;
-}
+  }
+  
+  .header__search-profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header__signin-button {
+    background: none;
+    color: white;
+    padding: 7px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: 0;
+  }
+  
+  .header__signin-button:hover {
+    background: white;
+    color: black;
+  }

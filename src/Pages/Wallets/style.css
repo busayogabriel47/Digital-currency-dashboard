@@ -1,0 +1,46 @@
+
+
+/* Wallet section styles */
+.wallet {
+    padding: 20px 0;
+}
+
+.wallet__container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wallet__title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.wallet__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wallet__table-head {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.wallet__table-header,
+.wallet__table-cell {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wallet__table-row:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .wallet__table-header,
+    .wallet__table-cell {
+        padding: 8px;
+    }
+}

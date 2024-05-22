@@ -1,71 +1,91 @@
-import React from 'react'
-import cryptoicons from "../../assets/images/cryptoicons.png"
-import group from "../../assets/images/group.png"
-import "./style.css"
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './style.css';
 
 const Headertwo = () => {
-  return (
-    <>
+    const [tradingPairs, setTradingPairs] = useState([]);
+    const [selectedPair, setSelectedPair] = useState('');
+    const [pairData, setPairData] = useState({});
+    const [pairLogo, setPairLogo] = useState('');
+
+    useEffect(() => {
+        const fetchTradingPairs = async () => {
+            try {
+                const response = await axios.get('https://api.binance.com/api/v3/ticker/24hr');
+                setTradingPairs(response.data);
+            } catch (error) {
+                console.error('Error fetching trading pairs:', error);
+            }
+        };
+
+        fetchTradingPairs();
+    }, []);
+
+    useEffect(() => {
+        const fetchPairData = async () => {
+            if (selectedPair) {
+                try {
+                    const response = await axios.get(`https://api.binance.com/api/v3/klines?symbol=${selectedPair}&interval=1h&limit=1`);
+                    setPairData({
+                        change: response.data[0][7], // 24h change
+                        high: response.data[0][2],   // 24h high
+                        low: response.data[0][3],    // 24h low
+                        volume: response.data[0][5]  // 24h volume
+                    });
+
+                    // Fetch logo URL for the selected pair
+                    const pairInfo = tradingPairs.find(pair => pair.symbol === selectedPair);
+                    if (pairInfo && pairInfo.icons) {
+                        setPairLogo(pairInfo.icons[0].url);
+                    }
+                } catch (error) {
+                    console.error('Error fetching pair data:', error);
+                }
+            }
+        };
+
+        fetchPairData();
+    }, [selectedPair, tradingPairs]);
+
+    return (
         <div className='headertwo'>
-               <div className='headertwo__select'>
-                    <div class="dropdown">
-                    <button class="headertwo_btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span><img src={cryptoicons} alt=''/>
-                        <img src={group} alt=''/>
-                        </span>
-                        <h2>BTC/USDT</h2>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item active" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li><hr class="dropdown-divider"/></li>
-                        <li><a class="dropdown-item" href="#">Separated link</a></li>
-                    </ul>
-                    </div>
+            <div className='headertwo__select'>
+                <select className='headertwo_btn' value={selectedPair} onChange={(e) => setSelectedPair(e.target.value)}>
+                    <option value=''>Select a pair</option>
+                    {tradingPairs.map(pair => (
+                        <option key={pair.symbol} value={pair.symbol}>{pair.symbol}</option>
+                    ))}
+                </select>
+                {pairLogo && <img src={pairLogo} alt=''/>}
+            </div>
 
-                    <div className='headertwo__price'><p>$20, 634</p></div>
-                </div> 
+            <div className='headertwo__price'>
+                <p>${pairData.high}</p>
+            </div>
 
-                <div className='headertwo__btcdata'>
-                    <div>
-                        <span className='header__btcdata-hrs'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
-                        </svg> 24h change</span>
-                        <p className='header__btcdata-digit'>520.80 + 1.25%</p>
-                    </div>
-
-                    <div>
-                        <span className='header__btcdata-hrs'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
-                        </svg> 24h high</span>
-                        <p className='header__btcdata-digit'>520.80 + 1.25%</p>
-                    </div>
-
-                    <div>
-                        <span className='header__btcdata-hrs'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
-                        </svg>
-                        24h low</span>
-                        <p className='header__btcdata-digit'>520.80 + 1.25%</p>
-                    </div>
-
-                    <div>
-                        <span className='header__btcdata-hrs'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
-                        </svg>
-                        24h low</span>
-                        <p className='header__btcdata-digit'>520.80 + 1.25%</p>
-                    </div>
+            <div className='headertwo__btcdata'>
+                <div>
+                    <span className='header__btcdata-hrs'>24h change</span>
+                    <p className='header__btcdata-digit'>{pairData.change}</p>
                 </div>
-            
-            <div></div>
+
+                <div>
+                    <span className='header__btcdata-hrs'>24h high</span>
+                    <p className='header__btcdata-digit'>{pairData.high}</p>
+                </div>
+
+                <div>
+                    <span className='header__btcdata-hrs'>24h low</span>
+                    <p className='header__btcdata-digit'>{pairData.low}</p>
+                </div>
+
+                <div>
+                    <span className='header__btcdata-hrs'>24h volume</span>
+                    <p className='header__btcdata-digit'>{pairData.volume}</p>
+                </div>
+            </div>
         </div>
-    </>
-  )
+    );
 }
 
-export default Headertwo
+export default Headertwo;

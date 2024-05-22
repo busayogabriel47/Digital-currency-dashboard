@@ -1,0 +1,15 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    color: #A7B1BC;
+    padding: 0 1rem;
+}
+.footer__container{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer__icon .fa-brands{
+    font-size: 2rem;
+    margin-right: 1rem;
+}
