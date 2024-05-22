@@ -1,0 +1,61 @@
+
+
+/* Base styles for the custom select */
+.custom-select {
+    position: relative;
+    width: 300px;
+  }
+  
+  .custom-select__trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .custom-select__trigger .arrow {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333;
+  }
+  
+  .custom-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: none;
+    z-index: 1000;
+  }
+  
+  .custom-select.open .custom-options {
+    display: block;
+  }
+  
+  .custom-option {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .custom-option img {
+    margin-right: 10px;
+  }
+  
+  .custom-option:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .custom-select__real-select {
+    display: none;
+  }

@@ -1,0 +1,30 @@
+/* Base styles for the search bar */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+/* Styles for the input element */
+.search-bar__input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px 30px 10px 10px; 
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: #12171D;
+}
+
+/* Styles for the icon */
+.search-bar__icon {
+    position: absolute;
+    right: 10px; /* Positioned on the right side */
+    fill: #333;
+    width: 20px;
+    height: 20px;
+    pointer-events: none; /* Ensures that the icon does not interfere with input focus */
+}
