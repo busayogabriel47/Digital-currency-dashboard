@@ -52,3 +52,10 @@
 .header__btcdata-digit{
     font-size: 14px;
 }
+
+
+@media (max-width: 768px) {
+    .headertwo{
+        height: auto;
+    }
+  }

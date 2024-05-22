@@ -88,10 +88,18 @@
 .profit{
     background-color: #213D35 !important;
 }
-.order__recent--btn, .limit__ms{
+.order__recent--btn{
     min-width: 140px;
+    border-radius: 100px;
 }
 
+.lmstop__limit{
+    min-width: 20px;
+}
+.main__openorder--tab{
+    display: flex;
+    gap: 10%;
+}
 /* Font size for the btn*/
 .buysell__tab--btn, 
 .order__recent--btn, .table, .table--borderless .table__cell,
@@ -110,10 +118,7 @@
 .limit__ms{
     background-color: #20252B;
 }
-.order__recent--btn{
-    min-width: 56px;
-    border-radius: 100px;
-}
+
 .order__recent--btn.active{
     background-color: #353945 !important;
 }
@@ -122,7 +127,7 @@
 
 /* Base styles for the form */
 .form {
-    width: 300px;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
     border-radius: 5px;
@@ -264,9 +269,8 @@
     justify-content: center;
 }
 .order__content{
-    width: 378px;
     height: 88px;
-    margin: 10rem;
+    margin-top: 10rem;
 }
 .order__content h5{
     font-size: 20px;
@@ -276,12 +280,35 @@
     color: #A7B1BC;
 }
 
-
+.main__openorder--content{
+    display: flex;
+    justify-content: center;
+}
 
 
 @media (max-width: 768px) {
     .main__candlestick, .main{
         flex-direction:column;
+    }
+    .order__recent--btn{
+        min-width: 225px;
+    }
+    .main__openorder--tab{
+        gap: 0%;
+        min-width: 30px;
+    }
+    .main__openorder--btn{
+        min-width: 30px;
+    }
+    .lmstop__limit{
+        min-width: 10px;
+    }
+    .form {
+        width: 100%;
+        
+    }
+    .buysell__tab--btn{
+        min-width: 226px;
     }
   }
   

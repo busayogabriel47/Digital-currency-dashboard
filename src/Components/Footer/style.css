@@ -9,9 +9,16 @@
     display: flex;
     justify-content: space-between;
 }
+.footer__icon{
+    display: flex;
+}
 .footer__icon .fa-brands{
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-right: 1rem;
+}
+.footer a{
+    color: #A7B1BC;
+    text-decoration: none;
 }
 
 @media (max-width: 768px) {

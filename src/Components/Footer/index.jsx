@@ -17,11 +17,13 @@ function Footer() {
                     <i class="fa-brands fa-x-twitter"></i>
                     <i class="fa-brands fa-square-instagram"></i>
                     <i class="fa-brands fa-square-facebook"></i>
+
+                    <div className='footer__contact'>
+                    <Link to="/">Contactus</Link>
+                    </div>
                 </div>
 
-                <div className='footer__contact'>
-                    <Link to="/">Contactus</Link>
-                </div>
+                
             </div>
         </div>
     </>
