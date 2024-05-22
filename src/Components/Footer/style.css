@@ -13,3 +13,19 @@
     font-size: 2rem;
     margin-right: 1rem;
 }
+
+@media (max-width: 768px) {
+    .footer__container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer__icon .fa-brands{
+        font-size: 1.2rem;
+        margin-right: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    
+  }

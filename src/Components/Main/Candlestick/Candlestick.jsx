@@ -63,7 +63,7 @@ const options = {
 const Candlestick = () => {
   return (
     <>
-        <div className='main__candlestick'>
+            <div className='main__candlestick'>
                 <div className='main__candlestick--first'>
                     <Bar data={data} options={options}/>
                 </div>

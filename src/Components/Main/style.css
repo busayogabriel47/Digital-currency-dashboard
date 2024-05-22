@@ -275,3 +275,16 @@
     font-size: 10px;
     color: #A7B1BC;
 }
+
+
+
+
+@media (max-width: 768px) {
+    .main__candlestick, .main{
+        flex-direction:column;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    
+  }

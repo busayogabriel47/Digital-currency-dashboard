@@ -7,23 +7,28 @@ import "./Header.css";
 
 const Header = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleSignIn = () => {
     // Simulate an authentication process
     setIsAuthenticated(false);
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <header className="header">
       <div className="header__logo">
-        <img src={centuryhublogo} alt="sisyphuslogo" width="110%"/>
+        <img src={centuryhublogo} alt="centuryhub logo" />
       </div>
-      <nav className="header__navitems">
+      <nav className={`header__navitems ${isMobileMenuOpen ? 'open' : ''}`}>
         <ul className="header__navlist">
-          <li className="header__navitem"><Link to="/">Dashboard</Link></li>
-          <li className="header__navitem"><Link to="/markets">Markets</Link></li>
-          <li className="header__navitem"><Link to="/wallet">Wallet</Link></li>
-          <li className="header__navitem"><Link to="/profile">Profile</Link></li>
+          <li className="header__navitem"><Link to="/" onClick={toggleMobileMenu}>Dashboard</Link></li>
+          <li className="header__navitem"><Link to="/markets" onClick={toggleMobileMenu}>Markets</Link></li>
+          <li className="header__navitem"><Link to="/wallet" onClick={toggleMobileMenu}>Wallet</Link></li>
+          <li className="header__navitem"><Link to="/profile" onClick={toggleMobileMenu}>Profile</Link></li>
         </ul>
       </nav>
       <div className="header__search-profile">
@@ -34,6 +39,11 @@ const Header = () => {
           <button className="header__signin-button" onClick={handleSignIn}>Sign In</button>
         )}
       </div>
+      <button className="header__hamburger" onClick={toggleMobileMenu}>
+        <span className="hamburger__line"></span>
+        <span className="hamburger__line"></span>
+        <span className="hamburger__line"></span>
+      </button>
     </header>
   );
 };
