@@ -14,7 +14,7 @@ const Buysell = () => {
               <button class="nav-link buysell__tab--btn fw-semibold position-relative" id="pills-sell-tab" data-bs-toggle="pill" data-bs-target="#pills-sell" type="button" role="tab" aria-controls="pills-sell" aria-selected="false">Sell</button>
             </li>
           </ul>
-          <div class="tab-content rounded-3 p-3 text-white" id="pills-tabContent">
+          <div class="tab-content rounded-3 text-white" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-buy" role="tabpanel" aria-labelledby="pills-buy-tab">
                 <LMStopTab/>
             </div>

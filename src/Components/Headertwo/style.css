@@ -2,7 +2,7 @@
     background-color: #20252B;
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 45px;
     height: 80px;
     margin: 0 0.8rem;
     border-radius: 8px;
@@ -41,7 +41,7 @@
 /* btcdata style*/
 .headertwo__btcdata{
     display: flex;
-    gap: 48px;
+    gap: 119px;
 }
 .header__btcdata-hrs{
     font-size: 12px;

@@ -4,6 +4,7 @@ import Orderbook from '../Orderbook/Orderbook'
 
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import TimeInterval from '../TimeInterval/index';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -63,12 +64,15 @@ const options = {
 const Candlestick = () => {
   return (
     <>
-            <div className='main__candlestick'>
-                <div className='main__candlestick--first'>
-                    <Bar data={data} options={options}/>
+            
+        <div className='main__candlestick'>
+                
+            <div className='main__candlestick--first'>
+                <TimeInterval/>
+                <Bar data={data} options={options}/>
                 </div>
                 <Orderbook/>
-            </div>
+         </div>
     </>
   )
 }

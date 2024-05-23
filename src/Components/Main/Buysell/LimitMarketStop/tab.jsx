@@ -2,6 +2,7 @@
 
 import React from 'react'
 import LimitForm from './LimitForm';
+import MarketForm from './MarketForm';
 
 
 
@@ -27,7 +28,7 @@ const LMStopTab = () => {
                           <LimitForm/>
                       </div>
                       <div class="tab-pane fade" id="pills-market" role="tabpanel" aria-labelledby="pills-market-tab">
-                        <LimitForm/>
+                        <MarketForm/>
                       </div>
                       <div class="tab-pane fade" id="pills-stop" role="tabpanel" aria-labelledby="pills-stop-tab">
                         <LimitForm/>

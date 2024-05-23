@@ -1,0 +1,12 @@
+.timeinterval{
+    display: flex;
+    justify-content:start;
+    height: 64px;
+    padding: 16px;
+    border: 1px;
+}
+
+.timeinterval__column{
+    flex-basis: 5%;
+    color: #626972;
+}
